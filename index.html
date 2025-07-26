@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUI Design System - 最適化された縦型タブレットUI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container" data-theme="aurora">
+        <!-- Compact Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="header-main">
+                    <span class="app-icon">🎨</span>
+                    <h1 class="app-title">GUI Design System</h1>
+                    <span class="app-version">v1.0</span>
+                </div>
+                <div class="header-info">
+                    <span class="info-item">📱 8" Tablet</span>
+                    <span class="info-item">⚡ 70% Scale</span>
+                    <span class="info-item">🎭 Aurora Theme</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar">
+                <div class="nav-section">
+                    <h3 class="nav-title">Components</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item active" data-section="dashboard">
+                            <span class="nav-icon">📊</span>
+                            <span class="nav-text">Dashboard</span>
+                        </li>
+                        <li class="nav-item" data-section="forms">
+                            <span class="nav-icon">📝</span>
+                            <span class="nav-text">Forms</span>
+                        </li>
+                        <li class="nav-item" data-section="cards">
+                            <span class="nav-icon">🃏</span>
+                            <span class="nav-text">Cards</span>
+                        </li>
+                        <li class="nav-item" data-section="tables">
+                            <span class="nav-icon">📋</span>
+                            <span class="nav-text">Tables</span>
+                        </li>
+                        <li class="nav-item" data-section="charts">
+                            <span class="nav-icon">📈</span>
+                            <span class="nav-text">Charts</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-title">Themes</h3>
+                    <div class="theme-grid">
+                        <button class="theme-btn active" data-theme="aurora" title="Aurora">
+                            <span class="theme-preview aurora"></span>
+                        </button>
+                        <button class="theme-btn" data-theme="cyber" title="Cyber">
+                            <span class="theme-preview cyber"></span>
+                        </button>
+                        <button class="theme-btn" data-theme="ocean" title="Ocean">
+                            <span class="theme-preview ocean"></span>
+                        </button>
+                        <button class="theme-btn" data-theme="sunset" title="Sunset">
+                            <span class="theme-preview sunset"></span>
+                        </button>
+                        <button class="theme-btn" data-theme="forest" title="Forest">
+                            <span class="theme-preview forest"></span>
+                        </button>
+                        <button class="theme-btn" data-theme="galaxy" title="Galaxy">
+                            <span class="theme-preview galaxy"></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard Section -->
+                <section class="content-section active" id="dashboard">
+                    <div class="section-header">
+                        <h2 class="section-title">Dashboard Overview</h2>
+                        <div class="section-controls">
+                            <button class="btn btn-sm btn-primary">
+                                <span class="btn-icon">🔄</span>
+                                Refresh
+                            </button>
+                            <button class="btn btn-sm btn-secondary">
+                                <span class="btn-icon">⚙️</span>
+                                Settings
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">💰</div>
+                            <div class="stat-content">
+                                <div class="stat-value">$42,850</div>
+                                <div class="stat-label">Revenue</div>
+                                <div class="stat-change positive">+12.5%</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-content">
+                                <div class="stat-value">8,432</div>
+                                <div class="stat-label">Users</div>
+                                <div class="stat-change positive">+23.1%</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📈</div>
+                            <div class="stat-content">
+                                <div class="stat-value">92.4%</div>
+                                <div class="stat-label">Growth</div>
+                                <div class="stat-change positive">+5.2%</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⚡</div>
+                            <div class="stat-content">
+                                <div class="stat-value">1,248</div>
+                                <div class="stat-label">Actions</div>
+                                <div class="stat-change negative">-2.3%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Visualization -->
+                    <div class="data-grid">
+                        <div class="data-card">
+                            <h3 class="card-title">Performance Metrics</h3>
+                            <div class="chart-container">
+                                <canvas id="performanceChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="data-card">
+                            <h3 class="card-title">Activity Feed</h3>
+                            <div class="activity-feed">
+                                <div class="activity-item">
+                                    <span class="activity-icon">🎯</span>
+                                    <div class="activity-content">
+                                        <div class="activity-text">New milestone reached</div>
+                                        <div class="activity-time">2 min ago</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-icon">📊</span>
+                                    <div class="activity-content">
+                                        <div class="activity-text">Report generated</div>
+                                        <div class="activity-time">15 min ago</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-icon">🔔</span>
+                                    <div class="activity-content">
+                                        <div class="activity-text">System update completed</div>
+                                        <div class="activity-time">1 hour ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Forms Section -->
+                <section class="content-section" id="forms">
+                    <div class="section-header">
+                        <h2 class="section-title">Form Components</h2>
+                    </div>
+
+                    <div class="form-showcase">
+                        <div class="form-card">
+                            <h3 class="card-title">Input Elements</h3>
+                            <form class="demo-form">
+                                <div class="form-group">
+                                    <label class="form-label">Text Input</label>
+                                    <input type="text" class="form-input" placeholder="Enter text...">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Select Menu</label>
+                                    <select class="form-select">
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Range Slider</label>
+                                    <input type="range" class="form-range" min="0" max="100" value="70">
+                                    <span class="range-value">70%</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkbox-mark"></span>
+                                        <span class="checkbox-label">Enable notifications</span>
+                                    </label>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cards Section -->
+                <section class="content-section" id="cards">
+                    <div class="section-header">
+                        <h2 class="section-title">Card Layouts</h2>
+                    </div>
+
+                    <div class="cards-showcase">
+                        <div class="showcase-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Feature Card</h3>
+                                <span class="card-badge">NEW</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Compact and information-dense card design optimized for 8-inch tablets.</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-sm btn-primary">Learn More</button>
+                            </div>
+                        </div>
+                        
+                        <div class="showcase-card glass">
+                            <div class="card-icon">🌟</div>
+                            <h3 class="card-title">Glass Morphism</h3>
+                            <p class="card-text">Beautiful frosted glass effect with dynamic backgrounds.</p>
+                        </div>
+                        
+                        <div class="showcase-card gradient">
+                            <div class="card-icon">🎨</div>
+                            <h3 class="card-title">Gradient Magic</h3>
+                            <p class="card-text">Vibrant gradients that adapt to your chosen theme.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tables Section -->
+                <section class="content-section" id="tables">
+                    <div class="section-header">
+                        <h2 class="section-title">Data Tables</h2>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Status</th>
+                                    <th>Progress</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#001</td>
+                                    <td>Project Alpha</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 75%"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-xs btn-icon" title="Edit">✏️</button>
+                                        <button class="btn btn-xs btn-icon" title="Delete">🗑️</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#002</td>
+                                    <td>Project Beta</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 30%"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-xs btn-icon" title="Edit">✏️</button>
+                                        <button class="btn btn-xs btn-icon" title="Delete">🗑️</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Charts Section -->
+                <section class="content-section" id="charts">
+                    <div class="section-header">
+                        <h2 class="section-title">Data Visualization</h2>
+                    </div>
+
+                    <div class="charts-grid">
+                        <div class="chart-card">
+                            <h3 class="card-title">Analytics Overview</h3>
+                            <canvas id="analyticsChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3 class="card-title">Distribution</h3>
+                            <canvas id="distributionChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Floating Action Button -->
+        <div class="fab-container">
+            <button class="fab" id="fabMenu">
+                <span class="fab-icon">✨</span>
+            </button>
+            <div class="fab-options">
+                <button class="fab-option" title="Toggle Effects">
+                    <span class="fab-option-icon">🎆</span>
+                </button>
+                <button class="fab-option" title="Change Layout">
+                    <span class="fab-option-icon">🔀</span>
+                </button>
+                <button class="fab-option" title="Export Theme">
+                    <span class="fab-option-icon">💾</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Particle Effects -->
+        <div class="particle-container" id="particleContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
